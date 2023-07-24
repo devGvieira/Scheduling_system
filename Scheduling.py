@@ -1,0 +1,288 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import(QApplication, QMainWindow)
+from PyQt5.QtWidgets import *
+from Database import *
+
+class Ui_Scheduling(QMainWindow):
+    
+    def setupUi(self, Scheduling):
+        Scheduling.setObjectName("Scheduling")
+        Scheduling.resize(256, 498)
+        Scheduling.setStyleSheet("background-color: #240046;")
+        self.responsible = QtWidgets.QLabel(Scheduling)
+        self.responsible.setGeometry(QtCore.QRect(10, 80, 141, 25))
+        self.responsible.setStyleSheet("color: rgb(255, 255, 255);")
+        self.responsible.setObjectName("responsible")
+        self.responsible_le = QtWidgets.QLineEdit(Scheduling)
+        self.responsible_le.setGeometry(QtCore.QRect(10, 110, 228, 25))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        self.responsible_le.setPalette(palette)
+        self.responsible_le.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 10px;")
+        self.responsible_le.setObjectName("responsible_le")
+        self.student = QtWidgets.QLabel(Scheduling)
+        self.student.setGeometry(QtCore.QRect(10, 140, 98, 25))
+        self.student.setStyleSheet("color: rgb(255, 255, 255);")
+        self.student.setObjectName("student")
+        self.student_le = QtWidgets.QLineEdit(Scheduling)
+        self.student_le.setGeometry(QtCore.QRect(10, 170, 228, 25))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.PlaceholderText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(36, 0, 70))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(154, 153, 150))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
+        self.student_le.setPalette(palette)
+        self.student_le.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 10px;")
+        self.student_le.setObjectName("student_le")
+        self.date = QtWidgets.QLabel(Scheduling)
+        self.date.setGeometry(QtCore.QRect(10, 200, 33, 26))
+        self.date.setStyleSheet("color: rgb(255, 255, 255);")
+        self.date.setObjectName("date")
+        self.date_de = QtWidgets.QDateEdit(Scheduling)
+        self.date_de.setGeometry(QtCore.QRect(10, 230, 228, 26))
+        self.date_de.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 12px;")
+        self.date_de.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
+        self.date_de.setDateTime(QtCore.QDateTime(QtCore.QDate(2023, 7, 10), QtCore.QTime(0, 0, 0)))
+        self.date_de.setMaximumDate(QtCore.QDate(2025, 1, 1))
+        self.date_de.setMinimumDate(QtCore.QDate(2023, 7, 10))
+        self.date_de.setObjectName("date_de")
+        self.timeLabel = QtWidgets.QLabel(Scheduling)
+        self.timeLabel.setGeometry(QtCore.QRect(10, 260, 34, 26))
+        self.timeLabel.setStyleSheet("color: rgb(255, 255, 255);")
+        self.timeLabel.setObjectName("timeLabel")
+        self.timeEdit = QtWidgets.QTimeEdit(Scheduling)
+        self.timeEdit.setGeometry(QtCore.QRect(10, 290, 228, 26))
+        self.timeEdit.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 12px;")
+        self.timeEdit.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
+        self.timeEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2023, 7, 10), QtCore.QTime(9, 0, 0)))
+        self.timeEdit.setMaximumDateTime(QtCore.QDateTime(QtCore.QDate(2025, 1, 1), QtCore.QTime(17, 0, 0)))
+        self.timeEdit.setMinimumDateTime(QtCore.QDateTime(QtCore.QDate(2023, 7, 10), QtCore.QTime(9, 0, 0)))
+        self.timeEdit.setCurrentSection(QtWidgets.QDateTimeEdit.HourSection)
+        self.timeEdit.setTime(QtCore.QTime(9, 0, 0))
+        self.timeEdit.setObjectName("timeEdit")
+        self.subject = QtWidgets.QLabel(Scheduling)
+        self.subject.setGeometry(QtCore.QRect(10, 320, 51, 25))
+        self.subject.setStyleSheet("color: rgb(255, 255, 255);")
+        self.subject.setObjectName("subject")
+        self.subject_cb = QtWidgets.QComboBox(Scheduling)
+        self.subject_cb.setGeometry(QtCore.QRect(10, 350, 228, 25))
+        self.subject_cb.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+        self.subject_cb.setAutoFillBackground(False)
+        self.subject_cb.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 12px;")
+        self.subject_cb.setLocale(QtCore.QLocale(QtCore.QLocale.Portuguese, QtCore.QLocale.Brazil))
+        self.subject_cb.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
+        self.subject_cb.setMinimumContentsLength(1)
+        self.subject_cb.setObjectName("subject_cb")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.subject_cb.addItem("")
+        self.hours = QtWidgets.QLabel(Scheduling)
+        self.hours.setGeometry(QtCore.QRect(10, 380, 97, 26))
+        self.hours.setStyleSheet("color: rgb(255, 255, 255);")
+        self.hours.setObjectName("hours")
+        self.hours_sb = QtWidgets.QSpinBox(Scheduling)
+        self.hours_sb.setGeometry(QtCore.QRect(10, 410, 228, 26))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.hours_sb.sizePolicy().hasHeightForWidth())
+        self.hours_sb.setSizePolicy(sizePolicy)
+        self.hours_sb.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font-color: #fff;\n"
+"border: 2px solid;\n"
+"border-radius: 5px;\n"
+"border-color: #fff;\n"
+"font-size: 12px;")
+        self.hours_sb.setMinimum(1)
+        self.hours_sb.setMaximum(5)
+        self.hours_sb.setObjectName("hours_sb")
+        self.label = QtWidgets.QLabel(Scheduling)
+        self.label.setGeometry(QtCore.QRect(60, 30, 141, 20))
+        self.label.setStyleSheet("font-size: 16px;\n"
+"color: rgb(255, 255, 255);")
+        self.label.setObjectName("label")
+        self.schedule_pb = QtWidgets.QPushButton(Scheduling)
+        self.schedule_pb.setGeometry(QtCore.QRect(80, 450, 89, 25))
+        self.schedule_pb.setStyleSheet("background-color: rgb(236, 236, 236);\n"
+"border-radius: 5px;")
+        self.schedule_pb.setObjectName("schedule_pb")
+
+        self.retranslateUi(Scheduling)
+        QtCore.QMetaObject.connectSlotsByName(Scheduling)
+
+        self.schedule_pb.clicked.connect(self.getInfo)
+
+    def retranslateUi(self, Scheduling):
+        _translate = QtCore.QCoreApplication.translate
+        Scheduling.setWindowTitle(_translate("Scheduling", "Scheduling"))
+        self.responsible.setText(_translate("Scheduling", "Responsible Adult"))
+        self.responsible_le.setPlaceholderText(_translate("Scheduling", "Insert the student\'s responsible adult name"))
+        self.student.setText(_translate("Scheduling", "Student Name"))
+        self.student_le.setPlaceholderText(_translate("Scheduling", "Insert the student\'s name"))
+        self.date.setText(_translate("Scheduling", "Date"))
+        self.timeLabel.setText(_translate("Scheduling", "Time"))
+        self.subject.setText(_translate("Scheduling", "Subject"))
+        self.subject_cb.setItemText(0, _translate("Scheduling", "Physics"))
+        self.subject_cb.setItemText(1, _translate("Scheduling", "Mathematics"))
+        self.subject_cb.setItemText(2, _translate("Scheduling", "English"))
+        self.subject_cb.setItemText(3, _translate("Scheduling", "History"))
+        self.subject_cb.setItemText(4, _translate("Scheduling", "Geography"))
+        self.subject_cb.setItemText(5, _translate("Scheduling", "Sociology"))
+        self.subject_cb.setItemText(6, _translate("Scheduling", "Phylosophy"))
+        self.subject_cb.setItemText(7, _translate("Scheduling", "Art"))
+        self.subject_cb.setItemText(8, _translate("Scheduling", "Chemistry"))
+        self.subject_cb.setItemText(9, _translate("Scheduling", "Biology"))
+        self.hours.setText(_translate("Scheduling", "Hours of Class"))
+        self.label.setText(_translate("Scheduling", "Schedule your class"))
+        self.schedule_pb.setText(_translate("Scheduling", "Schedule"))
+
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        self.show()
+        
+    # Function that saves scheduling data in db
+    def getInfo(self):
+        id = None
+        responsible_adult = self.responsible_le.text()
+        student_name = self.student_le.text()
+        date = self.date_de.text()
+        time = self.timeEdit.text()
+        subject = self.subject_cb.currentText()
+        hours_of_class = self.hours_sb.text()
+
+        scheduling_tuple=(id, responsible_adult, student_name, date, time, subject, hours_of_class)
+
+        insert_variables_query ="INSERT INTO Scheduling (ID, Responsible_Adult, Student_Name, Date, Time, Subject, Hours_of_Class) VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+        # Calling class and inserting the tuple
+        db = sqlite_db('db_files.db')
+        db.insert(insert_variables_query, scheduling_tuple)
+
+        self.close()
