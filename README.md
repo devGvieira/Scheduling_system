@@ -2,9 +2,9 @@
 CRUD system developed for the sole purpose of studying Python and its capabilities.
 
 ## Requirements
-1. Python
+1. Python;
 2. Python package PyQt5;
-3. Python package sqlite3
+3. Python package sqlite3.
 
 ## How to use
 
@@ -25,4 +25,5 @@ CRUD system developed for the sole purpose of studying Python and its capabiliti
 2. Add method to the Forgot Password button;
 3. Run login window after creating account;
 4. Set minimum of characters for password;
-5. Stop discerning between capitalized and not capitalized letters when checking usernsame;
+5. Stop discerning between capitalized and not capitalized letters when checking username;
+6. Implement function to add more admins.
