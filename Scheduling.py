@@ -254,7 +254,7 @@ class Ui_Scheduling(QMainWindow):
         self.subject_cb.setItemText(3, _translate("Scheduling", "History"))
         self.subject_cb.setItemText(4, _translate("Scheduling", "Geography"))
         self.subject_cb.setItemText(5, _translate("Scheduling", "Sociology"))
-        self.subject_cb.setItemText(6, _translate("Scheduling", "Phylosophy"))
+        self.subject_cb.setItemText(6, _translate("Scheduling", "Philosophy"))
         self.subject_cb.setItemText(7, _translate("Scheduling", "Art"))
         self.subject_cb.setItemText(8, _translate("Scheduling", "Chemistry"))
         self.subject_cb.setItemText(9, _translate("Scheduling", "Biology"))
