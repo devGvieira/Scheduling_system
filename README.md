@@ -22,5 +22,7 @@ CRUD system developed for the sole purpose of studying Python and its capabiliti
 ## Upcoming updates
 
 1. Optmize the functions in the class sqlite_db in the file Database.py;
-2. Add function to the Forgot Password button;
+2. Add method to the Forgot Password button;
 3. Run login window after creating account;
+4. Set minimum of characters for password;
+5. Stop discerning between capitalized and not capitalized letters when checking usernsame;
