@@ -3,8 +3,8 @@ CRUD system developed for the sole purpose of studying Python and its capabiliti
 
 ## Requirements
 1. Python
-2. Python library PyQt5;
-3. Python library sqlite3
+2. Python package PyQt5;
+3. Python package sqlite3
 
 ## How to use
 
