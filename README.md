@@ -26,4 +26,5 @@ CRUD system developed for the sole purpose of studying Python and its capabiliti
 3. Run login window after creating account;
 4. Set minimum of characters for password;
 5. Stop discerning between capitalized and not capitalized letters when checking username;
-6. Implement function to create admin accounts.
+6. Implement function to create admin accounts;
+7. Improve update function.
